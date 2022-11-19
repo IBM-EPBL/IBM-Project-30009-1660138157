@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form </title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+	<link rel="stylesheet" href="/static/css/style3.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<h2>Registration Form</h2>
+		</div>
+		<form id="form" class="form" action="{{ url_for('addrec') }}" method="POST">
+			<div class="form-control">
+				<input type="text" placeholder="Enter name" id="name" name="name" />
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="email" placeholder="Enter email" id="email" name="email" />
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="password" placeholder="Password" id="password" name="password" />
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="password" placeholder="Confirm Password" id="confirm" name="confirm" />
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="tel" placeholder="Mobile no" id="phoneno" name="phoneno" />
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+
+			<div class="form-control">
+				<input type="text" id="dob" placeholder="DOB" name="dob">
+				<i class="fas fa-check-circle"></i>
+				<i class="fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+
+			<div class="form-control">
+				<input type="text" placeholder="Blood group" id="bloodgroup" name="bloodgroup"/>
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="text" placeholder="Gender" id="gender" name="gender"/>
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="text" placeholder="Address" id="address" name="address"/>
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="text" placeholder="City" id="city" name="city"/>
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="number" placeholder="pincode" id="pin" name="pin"/>
+				<i class="fas fa-check-circle"></i>
+				<i class="fas fa-times-circle"></i>
+				<small>Error message</small>
+			</div>
+
+			<div class="action">
+				<button type="submit">
+					Submit
+				</button>
+
+			</div>
+			<script src="/static/js/script.js"></script>
+		</form>
+
+	</div>
+</body>
+
+</html>

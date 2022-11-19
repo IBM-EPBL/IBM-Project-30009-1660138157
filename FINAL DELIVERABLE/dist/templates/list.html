@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+   <head>
+      <title>donor list</title>
+      <link rel="stylesheet" href="/static/css/style4.css">
+
+   </head>
+   <body>
+
+      <h1>PLASMA DONOR LIST</h1>
+      <div class="topnav">
+         <!-- <a class="active" href="#home">Home</a> -->
+         <input type="text" id="myInput" onkeyup="myFunction()"placeholder="Search By Bloodgroup" class="input">
+         <input type="text" id="myInputs1" onkeyup="myFunction1()"placeholder="Search By Pin" class = "input">
+       </div>
+       <br><br>
+     <center><table border = 3 id="myTable">
+         <thead>
+            <td>Name</td>
+            <td>Email</td>
+            <td>password</td>
+            <td>Cofirm</td>
+            <td>Phoneno</td>
+            <td>DOB</td>
+            <td>Bloodgroup</td>
+            <td>Gender</td>
+            <td>City</td>
+            <td>pin</td>
+            <td>address</td>
+         </thead>
+         {% for row in DONOR %}
+            <tr>
+               <td>{{row["NAME"]}}</td>
+               <td> {{ row["EMAIL"]}}</td>
+               <td>{{row["PASSWORD"]}}</td>
+               <td>{{row["CONFIRM"]}}</td>	
+               <td>{{row["PHONENO"]}}</td>
+               <td>{{row["DOB"]}}</td>		
+               <td>{{row["BLOODGROUP"]}}</td>	
+               <td>{{row["GENDER"]}}</td>	
+               <td>{{row["CITY"]}}</td>	
+               <td>{{row["PIN"]}}</td>	
+               <td>{{row["ADDRESS"]}}</td>	
+               
+            </tr>
+         {% endfor %}
+      </table>
+      <div class="topnav">
+     </center>
+     <br><br>
+     <div class="action"><center><button><a href="/templates/sms">NOTIFY</a></button></center>
+    </div>
+  </div>
+     <script>
+      {
+      function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+       
+
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[6];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+        function myFunction1(){
+        var input1, filter1, table, tr, td, i, txtValue1,j;
+        input1 = document.getElementById("myInputs1");
+        filter1 = input1.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+
+        for (i = 0; i < tr.length; i++){
+        for(j=0; j < tr.length; j++) {
+          td = tr[i][j].getElementsByTagName("td")[9][6];
+          if (td) {
+            txtValue1 = td.textContent || td.innerText;
+            if (txtValue1.toUpperCase().indexOf(filter1) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    }
+  }
+    
+      </script>
+
+   </body>
+</html>
